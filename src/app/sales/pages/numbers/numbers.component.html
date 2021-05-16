@@ -1,0 +1,53 @@
+<div class="text-layout">
+	<h1>Pipes Decimal y Porcentaje</h1>
+	<p>
+		Pipes incluídos en Angular - Usualmente en el Common Module.
+	</p>
+</div>
+<div class="p-grid">
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="Ventas Netas" subheader="del presente año">
+			<ul>
+				<li>
+					netSales | number <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> <i class="pi pi-dollar"></i> {{ netSales | number }}
+				</li>
+				<li>
+					netSales | number:'1.5-6' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> <i class="pi pi-dollar"></i> {{ netSales | number:'1.5-6' }}
+				</li>
+				<li>
+					netSales | number:'1.3-4':'es-VE' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> <i class="pi pi-dollar"></i> {{ netSales | number:'1.3-4':'es-VE' }}
+				</li>
+				<li>
+					netSales | number:'1.2-3':'en' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> <i class="pi pi-dollar"></i> {{ netSales | number:'1.2-3':'en' }}
+				</li>
+				<li>
+					netSales | number:'1.1-2':'fr' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> <i class="pi pi-dollar"></i> {{ netSales | number:'1.1-2':'fr' }}
+				</li>
+			</ul>
+		</p-card>
+	</div>
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="Ventas Brutas" subheader="del presente año">
+			<ul>
+				<li>
+					netSales | currency <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> {{ netSales | currency }}
+				</li>
+				<li>
+					netSales | currency:'CAD':'symbol-narrow':'1.0-4' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> {{ netSales | currency:'CAD':'symbol-narrow':'1.0-4' }}
+				</li>
+				<li>
+					netSales | currency:'VES':'symbol-narrow':'1.0-2' <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> {{ netSales | currency:'VES':'symbol-narrow':'1.0-2' }}
+				</li>
+			</ul>
+		</p-card>
+	</div>
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="Ganancia Porcentual" subheader="del presente año">
+			<ul>
+				<li>
+					percentage | percent <i class="pi pi-arrow-right p-ml-5 p-mr-5"></i> {{ percentage | percent:'2.2-2' }}
+				</li>
+			</ul>
+		</p-card>
+	</div>
+</div>

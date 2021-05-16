@@ -1,0 +1,21 @@
+.layout-footer {
+    padding             : 2rem;
+    font-size           : 1rem;
+    background-color    : var(--surface-a);
+    display             : block;
+    align-items         : center;
+    justify-content     : space-between;
+	bottom				: 0;
+ 	word-break			: break-word;
+}
+.layout-footer a {
+    color		: var(--text-color);
+    font-weight	: 600;
+}
+.layout-footer .layout-footer-right a i {
+    color		: var(--text-secondary-color);
+    font-size	: 1.5rem;
+}
+.p-mr-3 {
+    margin-right: 1rem!important;
+}

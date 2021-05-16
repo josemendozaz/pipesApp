@@ -1,0 +1,76 @@
+<div class="text-layout">
+	<h1>Pipes Básicos</h1>
+	<p>
+		Pipes incluídos en Angular - Usualmente en el Common Module.
+	</p>
+</div>
+<div class="p-grid">
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="uppercase" [subheader]="lowerName">
+			{{ lowerName | uppercase }}
+		</p-card>
+	</div>
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="lowercase" [subheader]="upperName">
+			{{ upperName | lowercase }}
+		</p-card>
+	</div>
+	<div class="p-col-12 p-md-4 p-lg-4">
+		<p-card header="titlecase" [subheader]="fullName">
+			{{ fullName | titlecase }}
+		</p-card>
+	</div>
+</div>
+<br>
+<div class="text-layout">
+	<h1> Date | Fecha | Pipe </h1>
+	<p>
+		Pipe para mostrar fechas
+	</p>
+</div>
+<div class="p-grid">
+	<div class="p-col-12 p-md-6 p-lg-6">
+		<p-card header="Código">
+			<ul>
+				<li> date </li>
+				<li> date | date </li>
+				<li> date | date:'short' </li>
+				<li> date | date:'shortDate' </li>
+				<li> date | date:'long' </li>
+				<li> date | date:['dd-MM-YYYY'] </li>
+				<li> date | date:'MMMM </li>
+				<li> date | date:'MMMM dd, yyyy' </li>
+			</ul>
+			<hr>
+			<ul>
+				<li> date | date:'long':'GMT-5' </li>
+				<li> date | date:'long':'GMT-6' </li>
+				<li> date | date:'long':'':'en' </li>
+				<li> date | date:'long':'':'fr' </li>
+				<li> date | date:'long':'':'es-VE' </li>
+			</ul>
+		</p-card>
+	</div>
+	<div class="p-col-12 p-md-6 p-lg-6">
+		<p-card header="Resultado">
+			<ul>
+				<li> {{ date }} </li>
+				<li> {{ date | date }} </li>
+				<li> {{ date | date:'short' }} </li>
+				<li> {{ date | date:'shortDate' }} </li>
+				<li> {{ date | date:'long' }} </li>
+				<li> {{ date | date:['dd-MM-YYYY'] }} </li>
+				<li> {{ date | date:'MMMM' }} </li>
+				<li> {{ date | date:'MMMM dd, yyyy' }} </li>
+			</ul>
+			<hr>
+			<ul>
+				<li> {{ date | date:'long':'GMT-5' }} </li>
+				<li> {{ date | date:'long':'GMT-6' }} </li>
+				<li> {{ date | date:'long':'':'en' }} </li>
+				<li> {{ date | date:'long':'':'fr' }} </li>
+				<li> {{ date | date:'long':'':'es-VE' }} </li>
+			</ul>
+		</p-card>
+	</div>
+</div>
