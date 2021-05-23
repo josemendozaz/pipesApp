@@ -1,1 +1,95 @@
-<p>sort works!</p>
+<div class="text-layout">
+	<h1>Pipes Personalizados</h1>
+	<p>Pipes realizados de forma {{ 'independiente' | capitalletters:inCapitalLetters }}</p>
+</div>
+
+<p-toolbar class="p-mt-5">
+	<div class="p-toolbar-group-left"></div>
+	<div class="p-toolbar-group-right">
+		<button pButton
+			type="button"
+			[icon]="inCapitalLettersButtonClass"
+			iconPos="right"
+			class="p-mr-1 p-button-warning"
+			label="Toggle"
+			(click)="toggleInCapitalLetters()"
+		></button>
+		<button
+			pButton
+			icon="pi pi-sort"
+			label="Por nombre"
+			class="p-mr-1"
+			(click)="toggleOrderBy('name')"
+		></button>
+		<button
+			pButton
+			icon="pi pi-sort"
+			label="Usuario de la fuerza"
+			class="p-mr-1 p-button-success"
+			(click)="toggleOrderBy('useOfForce')"
+		></button>
+		<button
+			pButton
+			icon="pi pi-sort"
+			label="Por Habilidad"
+			class="p-mr-1 p-button-help"
+			(click)="toggleOrderBy('skill')"
+		></button>
+	</div>
+</p-toolbar>
+
+
+
+<div class="p-grid p-mt-5">
+	<div class="p-col">
+		<p-table [value]="characters | slice:0">
+			<ng-template pTemplate="header">
+				<tr>
+					<th pSortableColumn="name">Nombre <p-sortIcon field="name"></p-sortIcon></th>
+					<th pSortableColumn="affiliation">Afiliación <p-sortIcon field="affiliation"></p-sortIcon></th>
+					<th pSortableColumn="ability">Habilidad <p-sortIcon field="ability"></p-sortIcon></th>
+					<th pSortableColumn="weapon">Arma <p-sortIcon field="weapon"></p-sortIcon></th>
+					<th pSortableColumn="forceUser">¿Usuario de la fuerza? <p-sortIcon field="forceUser"></p-sortIcon></th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-character>
+				<tr >
+					<td>{{ character.name }}</td>
+					<td>{{ character.affiliation | affiliation }}</td>
+					<td>{{ character.ability }}</td>
+					<td>{{ character.weapon }}</td>
+					<td>{{ character.forceUser | forceuser | titlecase }}</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</div>
+</div>
+
+<div class="p-grid p-mt-2">
+	<div class="p-col">
+		<p-table [value]="characters | sortData:orderBy:orderByAsc">
+			<ng-template pTemplate="header">
+				<tr>
+					<th>Nombre</th>
+					<th>Afiliación</th>
+					<th>Habilidad</th>
+					<th>Arma</th>
+					<th>¿Usuario de la fuerza?</th>
+				</tr>
+			</ng-template>
+			<ng-template pTemplate="body" let-character>
+				<tr >
+					<td>{{ character.name }}</td>
+					<td>{{ character.affiliation | affiliation }}</td>
+					<td>{{ character.ability }}</td>
+					<td>{{ character.weapon }}</td>
+					<td>{{ character.forceUser | forceuser | titlecase  }}</td>
+				</tr>
+			</ng-template>
+		</p-table>
+	</div>
+</div>
+
+
+
+

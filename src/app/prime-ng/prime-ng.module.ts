@@ -8,7 +8,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { FieldsetModule } from 'primeng/fieldset';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { MessagesModule } from 'primeng/messages';
-import {ToastModule} from 'primeng/toast';
+import { ToastModule } from 'primeng/toast';
+import { ToolbarModule } from 'primeng/toolbar';
+import { TableModule } from 'primeng/table';
 
 // import { MenuItem } from 'primeng/api';
 
@@ -27,7 +29,9 @@ import {ToastModule} from 'primeng/toast';
 		FieldsetModule,
 		ConfirmDialogModule,
 		MessagesModule,
-		ToastModule
+		ToastModule,
+		ToolbarModule,
+		TableModule
 		// MenuItem
 	]
 })
